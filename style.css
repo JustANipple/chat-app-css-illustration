@@ -64,7 +64,7 @@ body {
   gap: 4rem;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: max-content;
   position: relative;
   overflow-x: hidden;
   padding: 2.25rem;
@@ -105,8 +105,70 @@ body {
 /* ====== Phone section ====== */
 .phone {
   background-color: var(--white-clr);
-  width: 16rem;
+  width: 15.5rem;
+  padding: 0.625rem;
+  border-radius: 2rem;
+  box-shadow: 0px 5px 20px -15px black;
 }
+
+.app {
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.header {
+  background: linear-gradient(90deg, rgba(141,61,252,1) 0%, rgba(229,69,253,1) 100%);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: 0px 5px 20px -15px black;
+}
+
+.camera {
+  background-color: var(--white-clr);
+  width: 8rem;
+  height: 1.75rem;
+  border-radius: 2rem;
+  position: relative;
+  top: -0.719rem;
+  margin: 0 auto;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem 0.5rem 1rem;
+}
+
+.fa-angle-left {
+  color: var(--white-clr);
+  transform: scale(1,2);
+  font-size: 0.5rem;
+}
+
+.avatar-img {
+  width: 1.5rem;
+  border-radius: 3rem;
+  border: 1px solid var(--white-clr);
+}
+
+.name {
+  color: var(--white-clr);
+  font-size: 0.7rem;
+}
+
+.status {
+  color: var(--sub-heading-clr);
+  font-size: 0.5rem;
+}
+
+.fa-ellipsis-vertical {
+  margin-left: auto;
+  color: var(--white-clr);
+  font-size: 0.5rem;
+  transform: scale(1,1.25)
+}
+
 
 /* ====== Content section ====== */
 .content {
