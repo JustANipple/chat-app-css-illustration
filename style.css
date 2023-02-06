@@ -10,7 +10,7 @@
 }
 html, body {
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 body {
   line-height: 1.5;
@@ -54,9 +54,10 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* Styling */
 body {
-    height: 100vh;
     background-color: #fafafa;
     font-family: var(--ff-rubik);
+    position: relative;
+    height: 100vh;
 }
 
 .container {
@@ -65,7 +66,6 @@ body {
   gap: 4rem;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   padding: 4rem 2.25rem;
 }
 
@@ -112,7 +112,6 @@ body {
 
 .app {
   border-radius: 1.5rem;
-  overflow: hidden;
   overflow: hidden;
   background-color: var(--app-bg-clr);
 }
@@ -293,8 +292,17 @@ body {
   outline: none;
 }
 
+
 /* Desktop view */
 @media screen and (min-width: 1024px) {
+
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
 
   /* ====== Backgrounds ====== */
   .purple-bg {
@@ -302,9 +310,22 @@ body {
     top: -6rem;
     transition: left 1s ease-in-out, top 1s ease-in-out;
   }
+
   .light-grey-bg {
     right: -11rem;
     bottom: -6rem;
     transition: right 1s ease-in-out, bottom 1s ease-in-out;
+  }
+
+  /* ====== Main ====== */
+  .container {
+    flex-direction: row;
+    gap: 7.75rem;
+    overflow: hidden;
+  }
+
+  .content {
+    max-width: 28rem;
+    text-align: left;
   }
 }
