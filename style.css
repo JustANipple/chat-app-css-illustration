@@ -10,6 +10,7 @@
 }
 html, body {
     height: 100%;
+    overflow: auto;
 }
 body {
   -webkit-font-smoothing: antialiased;
@@ -34,6 +35,9 @@ body {
 
 main {
   display: flex;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .purple-bg {
@@ -45,8 +49,9 @@ main {
   width: 500px;
   aspect-ratio: 4/6.25;
   position: absolute;
-  left: -5rem;
-  top: -6rem;
+  left: -19.75rem;
+  top: -17rem;
+  transition: left 1s ease-in-out, top 1s ease-in-out;
   z-index: -1;
 }
 
@@ -59,8 +64,22 @@ main {
   width: 500px;
   aspect-ratio: 4/6.25;
   position: absolute;
-  right: -11rem;
-  bottom: -9rem;
+  right: -19.75rem;
+  bottom: -17rem;
+  transition: right 1s ease-in-out, bottom 1s ease-in-out;
   transform: rotate(180deg);
   z-index: -1;
+}
+
+@media screen and (min-width: 1024px) {
+  .purple-bg {
+    left: -5rem;
+    top: -6rem;
+    transition: left 1s ease-in-out, top 1s ease-in-out;
+  }
+  .light-grey-bg {
+    right: -11rem;
+    bottom: -6rem;
+    transition: right 1s ease-in-out, bottom 1s ease-in-out;
+  }
 }
