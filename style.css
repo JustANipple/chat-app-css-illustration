@@ -199,6 +199,7 @@ body {
   max-width: fit-content;
   margin-left: auto;
   padding: 0;
+  margin-top: 0.5rem;
 }
 
 .three img {
@@ -214,6 +215,33 @@ body {
   border-radius: 0.5rem 0.5rem 0.25rem 0.5rem;
 }
 
+.six {
+  margin-top: 0.5rem;
+}
+
+.seven,
+.eight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(270deg, rgba(141,61,252,1) 0%, rgba(229,69,253,1) 100%);
+  color: var(--white-clr);
+  padding: 0.5rem;
+  border-radius: 0.75rem 0.75rem 0.75rem 0.25rem;
+  max-width: 10rem;
+}
+
+.fa-circle {
+  color: var(--white-clr);
+  font-size: 0.75rem;
+}
+
+.price {
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  margin-left: auto;
+  padding-right: 0.5rem;
+}
 
 /* ====== Content section ====== */
 .content {
