@@ -31,8 +31,9 @@ p, h1, h2, h3, h4, h5, h6 {
 :root {
   /* Text colors */
   --sub-heading-clr: hsl(276, 100%, 81%);
-  --chat-left-clr: hsl(276, 55%, 52%);
-  --chat-right-clr: hsl(271, 15%, 43%);
+  --chat-left-txt-clr: hsl(276, 55%, 52%);
+  --chat-right-txt-clr: hsl(271, 15%, 43%);
+  --chat-left-bg-clr: hsl(276, 38%, 92%);
   --placeholder-txt-clr: hsl(206, 6%, 79%);
   --main-heading-clr: hsl(271, 36%, 24%);
   --par-clr: hsl(270, 7%, 64%);
@@ -114,6 +115,8 @@ body {
 .app {
   border-radius: 1.5rem;
   overflow: hidden;
+  overflow: hidden;
+  background-color: var(--app-bg-clr);
 }
 
 .header {
@@ -167,6 +170,48 @@ body {
   color: var(--white-clr);
   font-size: 0.5rem;
   transform: scale(1,1.25)
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.5rem;
+  padding: 0.75rem;
+}
+
+.message {
+  max-width: 8rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.one,
+.two,
+.six {
+  color: var(--chat-left-txt-clr);
+  background-color: var(--chat-left-bg-clr);
+  border-radius: 0.5rem 0.5rem 0.5rem 0.25rem;
+}
+
+.three {
+  display: flex;
+  gap: 0.5rem;
+  max-width: fit-content;
+  margin-left: auto;
+  padding: 0;
+}
+
+.three img {
+  max-width: 2.5rem;
+  border-radius: 0.75rem;
+}
+
+.four,
+.five {
+  background-color: var(--white-clr);
+  color: var(--chat-right-txt-clr);
+  margin-left: auto;
+  border-radius: 0.5rem 0.5rem 0.25rem 0.5rem;
 }
 
 
