@@ -53,23 +53,27 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* Styling */
+
+  /* ====== General styling */
 body {
-    background-color: #fafafa;
-    font-family: var(--ff-rubik);
-    position: relative;
-    height: 100vh;
+  position: relative;
+  font-family: var(--ff-rubik);
+  background-color: #fafafa;
+  height: 100vh;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
   justify-content: center;
   align-items: center;
+  gap: 4rem;
   padding: 4rem 2.25rem;
 }
 
 /* ====== Backgrounds ====== */
+
+  /* ====== Left bg ====== */
 .purple-bg {
   -webkit-mask-image: url(images/bg-shape.svg);
   mask-image: url(images/bg-shape.svg);
@@ -81,10 +85,11 @@ body {
   position: absolute;
   left: -19.75rem;
   top: -17rem;
-  transition: left 1s ease-in-out, top 1s ease-in-out;
   z-index: -1;
+  transition: left 1s ease-in-out, top 1s ease-in-out;
 }
 
+  /* ====== Right bg */
 .light-grey-bg {
   -webkit-mask-image: url(images/bg-shape.svg);
   mask-image: url(images/bg-shape.svg);
@@ -96,12 +101,14 @@ body {
   position: absolute;
   right: -19.75rem;
   bottom: -17rem;
-  transition: right 1s ease-in-out, bottom 1s ease-in-out;
   transform: rotate(180deg);
   z-index: -1;
+  transition: right 1s ease-in-out, bottom 1s ease-in-out;
 }
 
 /* ====== Phone section ====== */
+
+  /* ====== Phone frame ======*/
 .phone {
   background-color: var(--white-clr);
   width: 15.5rem;
@@ -110,16 +117,17 @@ body {
   box-shadow: 0px 5px 20px -15px black;
 }
 
+  /* ====== Phone app ====== */
 .app {
-  border-radius: 1.5rem;
-  overflow: hidden;
   background-color: var(--app-bg-clr);
+  overflow: hidden;
+  border-radius: 1.5rem;
 }
 
+  /* ====== Top bar ====== */
 .header {
   background: linear-gradient(90deg, rgba(141,61,252,1) 0%, rgba(229,69,253,1) 100%);
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   box-shadow: 0px 5px 20px -15px black;
 }
 
@@ -169,6 +177,8 @@ body {
   transform: scale(1,1.25)
 }
 
+
+  /* ====== Messages ====== */
 .chat {
   display: flex;
   flex-direction: column;
@@ -177,62 +187,95 @@ body {
   padding: 0.75rem;
 }
 
-.message {
-  max-width: 8rem;
-}
-
-.left-text,
-.right-text {
-  padding: 0.25rem 0.5rem;
-}
-
-.left-text {
-  color: var(--chat-left-txt-clr);
-  background-color: var(--chat-left-bg-clr);
-  border-radius: 0.5rem 0.5rem 0.5rem 0.25rem;
-}
-
-.three {
+  /* ====== Positioning ====== */
+.message-one,
+.message-two,
+.message-three,
+.message-four,
+.message-five,
+.message-six {
   display: flex;
-  gap: 0.5rem;
-  max-width: fit-content;
-  margin-left: auto;
-  padding: 0;
-  margin-top: 0.5rem;
+  align-items: center;
 }
 
-.three img {
-  max-width: 2.5rem;
-  border-radius: 0.75rem;
-}
-
-.four,
-.five {
-  background-color: var(--white-clr);
-  color: var(--chat-right-txt-clr);
-  margin-left: auto;
-  border-radius: 0.5rem 0.5rem 0.25rem 0.5rem;
-  box-shadow: 0px 1px 15px -9px black;
-}
-
-.six {
-  margin-top: 0.5rem;
-}
-
-.seven,
-.eight {
+.message-seven, 
+.message-eight {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+  /* ====== Colors ====== */
+.message-one *,
+.message-two *,
+.message-six * {
+  background-color: var(--chat-left-bg-clr);
+  color: var(--chat-left-txt-clr);
+}
+
+.message-four .text,
+.message-five .text {
+  box-shadow: 0px 3px 10px -9px black;
+}
+
+.message-four *,
+.message-five * {
+  background-color: var(--white-clr);
+  color: var(--chat-right-txt-clr);
+}
+
+.message-seven, 
+.message-eight {
   background: linear-gradient(270deg, rgba(141,61,252,1) 0%, rgba(229,69,253,1) 100%);
   color: var(--white-clr);
+}
+
+/* ====== Spacing ====== */
+.message-three,
+.message-four,
+.message-five { 
+  justify-content: end;
+}
+
+.message-three {
+  gap: 0.5rem;
+}
+
+.message-three img {
+  max-width: 2.5rem;
+  border-radius: 0.5rem;
+}
+
+.dots {
+  padding: 0.5rem 0.25rem 0.25rem 0.25rem;
+  border-radius: 0.75rem 0.75rem 0.75rem 0;
+}
+
+.text {
+  max-width: 8rem;
+  padding: 0.4rem;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.25rem;
+}
+
+.message-four .dots,
+.message-five .dots {
+  border-radius: 0.75rem 0.75rem 0 0.75rem;
+}
+
+.message-four .text,
+.message-five .text {
+  border-radius: 0.5rem 0.5rem 0.25rem 0.5rem;
+}
+
+.message-seven, 
+.message-eight {
   padding: 0.5rem;
-  border-radius: 0.75rem 0.75rem 0.75rem 0.25rem;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.25rem;
   max-width: 10rem;
 }
 
-.fa-circle {
-  color: var(--white-clr);
+.message-seven .fa-circle, 
+.message-eight .fa-circle {
   font-size: 0.75rem;
 }
 
@@ -240,7 +283,6 @@ body {
   font-size: 0.75rem;
   font-weight: var(--fw-bold);
   margin-left: auto;
-  padding-right: 0.5rem;
 }
 
 /* ====== Content section ====== */
@@ -289,30 +331,117 @@ body {
 }
 
 /* ====== Active states & animations ====== */
+
+  /* ====== Type a message ====== */
 #typing:active,
 #typing:focus {
   outline: none;
 }
 
-.left-text{
+  /* ====== Chat ====== */
+.message-three img,
+.text,
+.message-seven, 
+.message-eight,
+.dots {
   transform: scale(0);
-  animation: appear 0.5s ease-in-out 0s forwards;
-  animation-delay: 3s;
-  text-align: left;
+}
+
+.message-one *,
+.message-two *,
+.message-six *,
+.message-seven,
+.message-eight {
   transform-origin: bottom left;
 }
 
-.dots {
-  animation: disappear 0.5s ease 0s forwards;
-  animation-delay: 2s;
-  position: absolute;
+.message-three *,
+.message-four *,
+.message-five * {
+  transform-origin: bottom right;
 }
 
-.dots i {
-  padding-top: auto;
-  color: var(--chat-left-bg-clr);
+  /* ====== Message one ====== */
+.message-one .dots {
+  animation: 
+  appear 1s ease-in-out 1s forwards,
+  disappear 1s ease-in-out 2s forwards;
 }
 
+.message-one .text {
+  animation: appear 1s ease-in-out 3s forwards;
+}
+
+  /* ====== Message two ====== */
+.message-two .dots {
+  animation: 
+  appear 1s ease-in-out 4s forwards,
+  disappear 1s ease-in-out 5s forwards;
+}
+
+.message-two .text {
+  animation: appear 1s ease-in-out 6s forwards;
+}
+
+  /* ====== Message three pictures ====== */
+.message-three img:nth-child(3) {
+  animation: appear 1s ease-in-out 7s forwards;
+}
+
+.message-three img:nth-child(2) {
+  animation: appear 1s ease-in-out 7.5s forwards;
+}
+
+.message-three img:nth-child(1) {
+  animation: appear 1s ease-in-out 8s forwards;
+}
+
+  /* ====== Message four ====== */
+.message-four .dots {
+  animation: 
+  appear 1s ease-in-out 9s forwards,
+  disappear 1s ease-in-out 10s forwards;
+}
+
+.message-four .text {
+  animation: appear 1s ease-in-out 11s forwards;
+}
+
+  /* ====== Message five ====== */
+.message-five .dots {
+  animation: 
+  appear 1s ease-in-out 12s forwards,
+  disappear 1s ease-in-out 13s forwards;
+}
+
+.message-five .text {
+  animation: appear 1s ease-in-out 14s forwards;
+}
+
+  /* ====== Message six ====== */
+.message-six .dots {
+  animation: 
+  appear 1s ease-in-out 15s forwards,
+  disappear 1s ease-in-out 16s forwards;
+}
+
+.message-six .text {
+  animation: appear 1s ease-in-out 17s forwards;
+}
+
+  /* ====== Message seven ====== */
+.message-seven {
+  animation: appear 1s ease-in-out 18s forwards;
+}
+
+  /* ====== Message eight ====== */
+.message-eight {
+  animation: appear 1s ease-in-out 19s forwards;
+}
+
+
+
+  /* ====== Dots jumping ====== */
 .dots i:nth-child(1) {
   animation: jumping 1s infinite;
   animation-delay: 0.1s;
@@ -328,11 +457,7 @@ body {
   animation-delay: 0.3s;
 }
 
-
-
-
-
-/* Jumping dots */
+/* ====== Keyframes ======  */
 @keyframes jumping {
   0% {
       transform: translateY(0%);

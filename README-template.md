@@ -49,9 +49,50 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+1. The first and hardest problem was building backgrounds with linear gradients.
+I managed to build a similar block on SVG path editor (https://yqnn.github.io/svg-path-editor/)
+Getting used to mask a block with SVG resulted the trickiest and the best solution for my challenge
+The trick is to have a block with the gradient background and then applying the mask to it makes everything invisible except the form of the SVG
 
-To see how you can add code snippets, see below:
+Here is how i made the left purple-pink background:
+```css
+.purple-bg {
+  -webkit-mask-image: url(images/bg-shape.svg);
+  mask-image: url(images/bg-shape.svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  background: linear-gradient(225deg, rgba(206,68,253,1) 0%, rgba(146,62,252,1) 100%);
+  width: 500px;
+  aspect-ratio: 4/6.25;
+  position: absolute;
+  left: -19.75rem;
+  top: -17rem;
+  z-index: -1;
+  transition: left 1s ease-in-out, top 1s ease-in-out;
+}
+```
+
+2. A minor problem was the overflow of negative positioning of absolute elements, in this case the two backgrounds. To make it possible, i used a position relative on the container (body), and then hidden the overflow-x for mobile view, so i can still scroll vertically and overflow (x and y) for desktop view to make it centered and unscrollable
+
+Mobile view:
+```css
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+```
+
+Desktop view:
+```css
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+```
+
 
 ```html
 <h1>Some HTML code I'm proud of</h1>
