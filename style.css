@@ -54,7 +54,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* Styling */
 
-  /* ====== General styling */
+  /* ====== General styling ====== */
 body {
   position: relative;
   font-family: var(--ff-rubik);
@@ -69,6 +69,7 @@ body {
   align-items: center;
   gap: 4rem;
   padding: 4rem 2.25rem;
+  overflow: hidden;
 }
 
 /* ====== Backgrounds ====== */
